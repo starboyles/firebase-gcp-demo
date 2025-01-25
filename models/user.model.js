@@ -16,4 +16,15 @@ class UserModel {
     const userDoc = await db.collection(COLLECTIONS.USERS).doc(uid).get();
     return userDoc.exists ? { id: userDoc.id, ...userDoc.data() } : null;
   }
+
+  static async updateUser(uid, updates) {
+    const userRef = db.collection(COLLECTIONS.USERS).doc(uid);
+    await userRef.update({
+      ...updates,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+    return userRef;
+  }
 }
+
+module.exports = UserModel;
