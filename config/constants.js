@@ -12,7 +12,7 @@ module.exports = {
   },
   TASK_STATUS: {
     TODO: "todo",
-    in_progress: "in-progress",
+    IN_PROGRESS: "in-progress",
     REVIEW: "review",
     DONE: "done",
   },
