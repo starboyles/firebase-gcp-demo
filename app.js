@@ -1,11 +1,11 @@
-const express = require('express');
-const cors = require('cors');
-const { errorHandler } = require('./middlewares/error.middleware');
+const express = require("express");
+const cors = require("cors");
+const { errorHandler } = require("./middlewares/error.middleware");
 
 // Routes
-const authRoutes = require('./routes/auth.routes');
-const teamRoutes = require('./routes/team.routes');
-const taskRoutes = require('./routes/task.routes');
+const authRoutes = require("./routes/auth.routes");
+const teamRoutes = require("./routes/team.routes");
+const taskRoutes = require("./routes/task.routes");
 
 const app = express();
 
@@ -14,9 +14,9 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/teams', teamRoutes);
-app.use('/api/tasks', taskRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/teams", teamRoutes);
+app.use("/api/tasks", taskRoutes);
 
 // Error handling
 app.use(errorHandler);
