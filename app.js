@@ -5,7 +5,7 @@ const { errorHandler } = require("./middlewares/error.middleware");
 // Routes
 const authRoutes = require("./routes/auth.routes");
 const teamRoutes = require("./routes/team.routes");
-const taskRoutes = require("./routes/task.routes");
+const taskRoutes = require("./routes/tasks.routes");
 
 const app = express();
 
