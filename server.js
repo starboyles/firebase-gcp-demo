@@ -8,6 +8,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//base route
+app.get("/", (req, res) => {
+  res.send("Server Up");
+});
+
 // Signup route
 app.post("/api/v1/signup", async (req, res) => {
   try {
